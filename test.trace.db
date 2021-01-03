@@ -1,0 +1,116 @@
+2021-01-03 00:38:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE USERS  
+USERID[*] VARCHAR2(30) NOT NULL PRIMARY KEY,
+NAME VARCHAR2(100) NOT NULL,
+GENDER VARCHAR2(10),
+CITY VARCHAR2(30)
+ "; SQL statement:
+create table users  
+userid varchar2(30) not null primary key,
+name varchar2(100) not null,
+gender varchar2(10),
+city varchar2(30)
+  [42000-200]
+2021-01-03 00:38:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+select * from users [42102-200]
+2021-01-03 01:18:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "mhyang" not found; SQL statement:
+insert into users values("mhyang","Yang, Myoung Hyoun", "Female", "Yangpeoung") [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.tools.Shell.execute(Shell.java:470)
+	at org.h2.tools.Shell.promptLoop(Shell.java:295)
+	at org.h2.tools.Shell.runTool(Shell.java:152)
+	at org.h2.tools.Shell.main(Shell.java:81)
+2021-01-03 01:19:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into users values(""mhyang"",""Yang, Myoung Hyoun"", [*]""F
+"; SQL statement:
+insert into users values("mhyang","Yang, Myoung Hyoun", "F
+ [42000-200]
+2021-01-03 01:20:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "mhyang" not found; SQL statement:
+insert into users(userid,name,gender,city) values("mhyang","Yang, Myoung Hyoun","Female","Yangpeoung") [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.tools.Shell.execute(Shell.java:470)
+	at org.h2.tools.Shell.promptLoop(Shell.java:295)
+	at org.h2.tools.Shell.runTool(Shell.java:152)
+	at org.h2.tools.Shell.main(Shell.java:81)
+2021-01-03 01:27:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "NSERT[*] INTO USERS VALUES('khyoon', 'Yoon, Kyoung Hee', FEMALE', 'SEOUL');
+nsert into users values('YJPARK', 'PARK, YOON JUN', 'MALE', 'SEOUL');
+nsert into users values('YHLIM', Lim, Yeon Hee', 'Female', 'Seoul')"; SQL statement:
+nsert into users values('khyoon', 'Yoon, Kyoung Hee', Female', 'Seoul');
+nsert into users values('yjpark', 'Park, Yoon Jun', 'Male', 'Seoul');
+nsert into users values('yhlim', Lim, Yeon Hee', 'Female', 'Seoul') [42000-200]
+2021-01-03 01:27:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "NSERT[*] INTO USERS VALUES('khyoon', 'Yoon, Kyoung Hee', FEMALE', 'SEOUL');
+nsert into users values('YJPARK', 'PARK, YOON JUN', 'MALE', 'SEOUL');
+nsert into users values('YHLIM', Lim, Yeon Hee', 'Female', 'Seoul')"; SQL statement:
+nsert into users values('khyoon', 'Yoon, Kyoung Hee', Female', 'Seoul');
+nsert into users values('yjpark', 'Park, Yoon Jun', 'Male', 'Seoul');
+nsert into users values('yhlim', Lim, Yeon Hee', 'Female', 'Seoul') [42000-200]
+2021-01-03 01:28:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS VALUES('khyoon', 'Yoon, Kyoung Hee', FEMALE', '[*]SEOUL');
+insert into users values('YJPARK', 'PARK, YOON JUN', 'MALE', 'SEOUL');
+insert into users values('YHLIM', Lim, Yeon Hee', 'Female', 'Seoul')"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into users values('khyoon', 'Yoon, Kyoung Hee', Female', 'Seoul');
+insert into users values('yjpark', 'Park, Yoon Jun', 'Male', 'Seoul');
+insert into users values('yhlim', Lim, Yeon Hee', 'Female', 'Seoul') [42001-200]
+2021-01-03 01:28:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS VALUES('khyoon', 'Yoon, Kyoung Hee', FEMALE', '[*]SEOUL');
+insert into users values('YJPARK', 'PARK, YOON JUN', 'MALE', 'SEOUL');
+insert into users values('YHLIM', Lim, Yeon Hee', 'Female', 'Seoul')"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into users values('khyoon', 'Yoon, Kyoung Hee', Female', 'Seoul');
+insert into users values('yjpark', 'Park, Yoon Jun', 'Male', 'Seoul');
+insert into users values('yhlim', Lim, Yeon Hee', 'Female', 'Seoul') [42001-200]
+2021-01-03 01:31:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found; SQL statement:
+update users set city='Seoul' where id='ijpark' [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:190)
+	at org.h2.command.dml.Update.prepare(Update.java:266)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+2021-01-03 01:31:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE FROM[*] USERS SET CITY='Seoul' WHERE ID='ijpark'"; expected "identifier"; SQL statement:
+update from users set city='Seoul' where id='ijpark' [42001-200]
